@@ -1,0 +1,64 @@
+@import '../variables/variabless.less';
+@import '../mixin_and_classes/mixin_and_classes.less';
+
+.block_slider{
+    top: 200%;
+    background-color: @background_main_blocks;
+    display: table;
+    vertical-align: middle;
+
+    .block_content{
+        @media(max-width:1150px){
+            left: 3em;
+        }
+    }
+
+    .container_block_slider{
+        display: table-cell;
+        vertical-align: middle;
+
+        .left{
+            .mixin_btn( absolute, 0 0.3em, #000, white, 200% );
+            top: 50%;
+            left: 0;
+        }
+
+        .right{
+            .mixin_btn( absolute, 0 0.3em, #000, white, 200% );
+            top: 50%;
+            right: 0;
+        }
+
+        .slide{
+            width: 100%;
+            position: relative;
+
+            .img_block_slider{
+                transition: 0.5s linear;
+                max-width: 100%;
+
+                @media(max-width:900px){
+                    margin-top: 2em;
+                }
+
+                @media(max-width:800px){
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .block_content{
+        @media(max-width:900px){
+            height: auto;
+        }
+    }
+    .first{
+        opacity: 1;
+        transition: 0.3s linear;
+    }
+    .last{
+        opacity: 0;
+        transition: 0.3s linear;
+    }
+}
