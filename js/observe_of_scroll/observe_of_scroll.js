@@ -7,6 +7,7 @@
         this.heights = getHeights( data.list );
         this.allHeights = this.heights[ this.heights.length - 1 ].max;
         this.i = 0;
+        this.maxLength = this.list.length - 1;
 
         var that = this,
             currentScroll = window.scrollY;
@@ -47,8 +48,12 @@
 
     fn.scrollDown = function() {
 
-        this.list[this.i].classList.add('active');
-        this.i++;
+        if( this.i < this.maxLength ) {
+
+            this.list[this.i].classList.add('active');
+            this.i++;
+        }
+
     };
 
     function getHeights( list ) {
