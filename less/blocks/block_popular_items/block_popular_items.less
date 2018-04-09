@@ -25,6 +25,9 @@
 
     .list_popular_category{
         &:extend(.list all);
+        width: 90%;
+        display: block;
+        margin: auto;
 
         @media(max-width:800px){
             width: 90%;
@@ -62,7 +65,8 @@
                 font-weight: 700;
                 white-space: nowrap;
                 overflow: hidden;
-                text-overflow: ellipsis;
+                -o-text-overflow: ellipsis;
+                   text-overflow: ellipsis;
 
                 &:hover{
                     text-decoration: underline;
